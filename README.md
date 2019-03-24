@@ -40,7 +40,7 @@ Special thanks to Java Brain Youtube Tutorial Series.
 
 
 - MVC: Model-View-Controller (MVC). An architectural pattern.
-![](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png)
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MVC.png)
 
 - Tomcat:
   - A combination of HTTP server and servlet container.
@@ -72,7 +72,7 @@ Example:
 
 ### 2.0 Environment Requirement
 
-- Java Version 7 and above
+- Java 8 SDK
 - A Java IDE that you are comfortable to work with.
 - [Postman](https://www.getpostman.com/downloads/)
 
@@ -80,9 +80,59 @@ Example:
 
 - Method 1: Use Intellij IDE
 
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Step1.png)
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Step2.png)
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Step3.png)
+
 - Method 2: Use Eclipse IDE
 
-- Method 3: Download from Spring Boot Website
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/EStep1.png)
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/EStep2.png)
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/EStep3.png)
+
+Add the following codes to your `pom.xml` under the first hierarchy
+```
+<parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+</parent>
+
+<dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+ </dependencies>
+ ```
+
+- Method 3: [Download from Spring Boot Website](https://start.spring.io/)
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/IStep1.png)
 
 ## Reference:
 1. https://www.quora.com/What-is-Spring-Framework-used-for
