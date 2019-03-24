@@ -136,21 +136,52 @@ Add the following codes to your `pom.xml` under the first hierarchy
 
 ### 2.2 Set Up MySQL database
 
-- [Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
-
-![]()
-
-![]()
-
 - For Windows
+  - [Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/). Please download the `zip` file.
+  
+  ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQLWindows.png)
+  
+  ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQL1.png)
+  
   - Unzip the `tar.gz` to a directory. E.g. C:\SpringBootIntroduction
-  - Open CMD. Type in
+  
+  - Open CMD. Type in the followings:
   ```
-  cd \myWebProject\mysql\bin
+  //assume in C folder already
+  cd \SpringBootIntroduction\mysql\bin
+  
+  // Initialize the database. Create a root user with random password. Show the messages on console
+  mysqld --initialize --console
+  ...
+  ...A temporary password is generated for root@localhost: xxxxxxxx // take note of this password, if forget, delete and unzipped folder, unzip it, and repeat the above steps
   ```
+  - To start the server:
+  ```
+  //assume in C folder already
+  cd \SpringBootIntroduction\mysql\bin
+  
+  mysqld --console
+  ```
+  - To shut down the server: Ctrl+C
+  
 - For MacOS.
-  - 
-  - 
+  - [Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/). Please download the `dmg` file.
+  
+  ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQLMac.png)
+  
+  ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQL1.png)
+  
+  -  Follow [this](https://dev.mysql.com/doc/refman/8.0/en/osx-installation-pkg.html). Basically just open the dmg and follow the instruction. Take note of the password!!
+  
+  - It will be installed in `/usr/local/mysql`
+  
+  - To start and shutdown the server: 
+  
+  ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQLMac1.png)
+  
+  ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQLMac2.png)
+  
+- For [Ubuntu](https://www.ntu.edu.sg/home/ehchua/programming/howto/Ubuntu_HowTo.html#mysql).
   
 ## Reference:
 1. https://www.quora.com/What-is-Spring-Framework-used-for
