@@ -14,7 +14,7 @@ Special thanks to Java Brain Youtube Tutorial Series.
 |  | Spring | Spring boot|
 | ------------- | ------------- | ------------- |
 | Definition|  huge Enterprise Java Framework | bootstrap a standalone, producation-grade Spring application that can be easily run|
-| Features|  POJOs<br> Dependency Injection<br> MVC<br> Security<br> Integrate with other framework like Hibernate <br> ...| Convention over configuration. On top of Spring framework, help developers solve the additional jar files and configurations, while you can also done manual configuration in `applicatoin.properties` <br><br> Embedded Tomcat server <br><br> ...|
+| Features|  POJOs<br> Dependency Injection<br> MVC<br> Security<br> Integrate with other framework like Hibernate <br> ...| Convention over configuration. On top of Spring framework, help developers solve the additional jar files and configurations, while you can also done manual configuration in `src/main/resources/applicatoin.properties` <br><br> Embedded Tomcat server <br><br> ...|
 
 ### 0.1 When will you use Spring boot? (https://www.quora.com/What-is-Spring-Framework-used-for)
 
@@ -78,7 +78,7 @@ Example:
 
 ### 2.1 Create Spring Boot Application (Enable Maven Auto-import)
 
-- Method 1: Use Intellij IDE
+- **Suggested** Method 1: Use [Intellij IDE](https://www.jetbrains.com/idea/download/#section=mac)
 
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Step1.png)
 
@@ -164,6 +164,19 @@ Add the following codes to your `pom.xml` under the first hierarchy
   ```
   - To shut down the server: Ctrl+C
   
+  - To start a 'Client'
+  ```
+  cd \SpringBootIntroduction\mysql\bin
+  mysql -u root -p
+  Enter password:   // Enter the root's password set during installation.
+  Welcome to the MySQL monitor.  Commands end with ; or \g.
+  Your MySQL connection id is 1
+  Server version: 8.0.xx
+  Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+  mysql>
+  ```
+  
 - For MacOS.
   - [Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/). Please download the `dmg` file.
   
@@ -181,8 +194,56 @@ Add the following codes to your `pom.xml` under the first hierarchy
   
   ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQLMac2.png)
   
-- For [Ubuntu](https://www.ntu.edu.sg/home/ehchua/programming/howto/Ubuntu_HowTo.html#mysql).
+  - To start a 'Client':
+  ```
+  cd /usr/local/mysql/bin
+  ./mysql -u root -p
+  Enter password:   // Enter the root's password given during installation. You will NOT any * for maximum security
+  Welcome to the MySQL monitor.  Commands end with ; or \g.
+  ......
+  mysql>
+  ```
   
+- For [Ubuntu](https://www.ntu.edu.sg/home/ehchua/programming/howto/Ubuntu_HowTo.html#mysql).
+
+### 2.3 Connect MySQL Database to Spring Boot project via Hibernate
+
+- Step 1: Open `File/Project Structure` in Intellij
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Hibernate1.png)
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Hibernate2.png)
+
+- Step 2: Open `Database` on the right-hand side tool bar
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Hibernate3.png)
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Hibernate4.png)
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Hibernate5.png)
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Hibernate6.png)
+  
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Hibernate7.png)
+
+**We are good to go!**
+
+## 3. Build a Spring boot applicaton with MySQL database together!
+
+### 3.1 Goals
+
+- Retreive products according to catagory
+
+- Add new products
+
+- Update product information
+
+### 3.2 File Structure (Good Software Engineering Practice Suggestion)
+
+
+
 ## Reference:
 1. https://www.quora.com/What-is-Spring-Framework-used-for
 2. https://www.ntu.edu.sg/home/ehchua/programming/sql/MySQL_HowTo.html
+3. [Java Brains Youtube Tutorial Series](https://www.youtube.com/watch?v=bDtZvYAT5Sc&list=PLqq-6Pq4lTTbx8p2oCgcAQGQyqN8XeA1x&index=8)
+4. [Telusko Youtube Tutorial Series](https://www.youtube.com/watch?v=Ch163VfHtvA)
