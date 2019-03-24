@@ -1,5 +1,4 @@
 # Spring-Boot-Introduction
-Special thanks to Java Brain Youtube Tutorial Series.
 
 ## Agenda
 0. Spring Boot Basics
@@ -16,7 +15,7 @@ Special thanks to Java Brain Youtube Tutorial Series.
 | Definition|  huge Enterprise Java Framework | bootstrap a standalone, producation-grade Spring application that can be easily run|
 | Features|  POJOs<br> Dependency Injection<br> MVC<br> Security<br> Integrate with other framework like Hibernate <br> ...| Convention over configuration. On top of Spring framework, help developers solve the additional jar files and configurations, while you can also done manual configuration in `src/main/resources/applicatoin.properties` <br><br> Embedded Tomcat server <br><br> ...|
 
-### 0.1 When will you use Spring boot? (https://www.quora.com/What-is-Spring-Framework-used-for)
+### 0.1 When will you use Spring boot?
 
 - [ ] Develop web application.
 
@@ -232,15 +231,19 @@ Add the following codes to your `pom.xml` under the first hierarchy
 
 ### 3.1 Goals
 
-- Retreive products according to catagory
+- (GET) Retreive products according to catagory 
 
-- Add new products
+- (POST) Add new products
 
-- Update product information
+- (PUT) Update product information
+
+- (DELETE) Delete products
+
+- (Relational Database) Retreive all products that a merchant has
 
 ### 3.2 File Structure (Good Software Engineering Practice Suggestion)
 
-
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/fileStructure.png)
 
 ## Reference:
 1. https://www.quora.com/What-is-Spring-Framework-used-for
