@@ -76,7 +76,7 @@ Example:
 - A Java IDE that you are comfortable to work with.
 - [Postman](https://www.getpostman.com/downloads/)
 
-### 2.1 Create Spring Boot Application
+### 2.1 Create Spring Boot Application (Enable Maven Auto-import)
 
 - Method 1: Use Intellij IDE
 
@@ -134,5 +134,24 @@ Add the following codes to your `pom.xml` under the first hierarchy
 - Method 3: [Download from Spring Boot Website](https://start.spring.io/)
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/IStep1.png)
 
+### 2.2 Set Up MySQL database
+
+- [Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
+
+![]()
+
+![]()
+
+- For Windows
+  - Unzip the `tar.gz` to a directory. E.g. C:\SpringBootIntroduction
+  - Open CMD. Type in
+  ```
+  cd \myWebProject\mysql\bin
+  ```
+- For MacOS.
+  - 
+  - 
+  
 ## Reference:
 1. https://www.quora.com/What-is-Spring-Framework-used-for
+2. https://www.ntu.edu.sg/home/ehchua/programming/sql/MySQL_HowTo.html
