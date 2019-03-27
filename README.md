@@ -2,7 +2,7 @@
 
 ## Agenda
 0. Spring Boot Basics
-1. Hibernate Basics
+1. Hibernate ORM Basics
 2. Set Up
 3. Build a Spring boot applicaton with MySQL database together!
 
@@ -13,7 +13,7 @@
 |  | Spring | Spring boot|
 | ------------- | ------------- | ------------- |
 | Definition|  huge Enterprise Java Framework | bootstrap a standalone, producation-grade Spring application that can be easily run|
-| Features|  POJOs<br> Dependency Injection<br> MVC<br> Security<br> Integrate with other framework like Hibernate <br> ...| Convention over configuration. On top of Spring framework, help developers solve the additional jar files and configurations, while you can also done manual configuration in `src/main/resources/applicatoin.properties` <br><br> Embedded Tomcat server <br><br> ...|
+| Features|  - POJOs<br> - MVC<br> Dependency Injection<br> - Testing <br> - Dependency Injection <br> - Security <br>...| - Convention over configuration. <br> - Embedded Tomcat server <br> <br><br> ...|
 
 ### 0.1 When will you use Spring boot?
 
@@ -30,28 +30,51 @@
 
 ### 0.2 Important Concept
 
-- POJO: Plain Old Java Object. An ordinary Java object. [For more information](https://www.geeksforgeeks.org/pojo-vs-java-beans/)
+- POJO: Plain Old Java Object. [For more information.](https://www.geeksforgeeks.org/pojo-vs-java-beans/)
 
 | POJO | Java Bean |
 | ---- | ----- |
-| E.g `public class Employee { … }` | E.g  `public class GFG extends javax.servlet.http.HttpServlet { … } `|
+| No `extends` <br> No `implements` <br> No prespecified annotation <br> |  |
 | Not all POJOs are Java Beans | All Java Beans are POJOS |
 
+POJO example:
 
-- MVC: Model-View-Controller (MVC). An architectural pattern.
+```
+@Component
+public class ExampleListener {
+
+    @JmsListener(destination = "myDestination")
+    public void processOrder(String message) {
+    	System.out.println(message);
+    }
+}
+```
+
+Java Bean example:
+
+```
+public class ExampleListener implements MessageListener {
+
+    public void onMessage(Message message) {
+        ...
+    }
+
+}
+```
+
+- MVC: Model-View-Controller architecture(MVC).
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MVC.png)
-
-- Tomcat:
-  - A combination of HTTP server and servlet container.
-  - Work with HTTP Protocol. (Thus, the default port number will be 8080)
-
-- Servlet:
 
 - Dependency Injection: Details will be talked with the hands-on coding part.
 
-## 1. Hibernate Basics
+- Tomcat: A Java-capable HTTP Server
 
-### 1.0 What is Hibernate? (http://hibernate.org/orm/what-is-an-orm/)
+- HTTP Server: A piece of software that understands URLs and HTTP protocol.
+
+
+## 1. Hibernate ORM Basics
+
+### 1.0 What is Hibernate ORM? (http://hibernate.org/orm/what-is-an-orm/)
 
 An object-relational mapping tool for the Java programming language.
 
