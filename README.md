@@ -8,14 +8,18 @@
 
 ## 0. Spring Boot Basics
 
-### 0.0 Comparision between Spring and Spring boot
+### 0.0 Why Java?
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/trending.png)
+
+### 0.1 Comparision between Spring and Spring boot
 
 |  | Spring | Spring boot|
 | ------------- | ------------- | ------------- |
 | Definition|  huge Enterprise Java Framework | bootstrap a standalone, producation-grade Spring application that can be easily run|
 | Features|  - POJOs<br> - MVC<br> Dependency Injection<br> - Testing <br> - Dependency Injection <br> - Security <br>...| - Convention over configuration. <br> - Embedded Tomcat server <br> <br><br> ...|
 
-### 0.1 When will you use Spring boot?
+### 0.2 When will you use Spring boot?
 
 - [ ] Develop web application.
 
@@ -28,7 +32,7 @@
 
 - [ ] Integrate with external resources.
 
-### 0.2 Important Concept
+### 0.3 Important Concept
 
 - POJO: Plain Old Java Object. [For more information.](https://www.geeksforgeeks.org/pojo-vs-java-beans/)
 
@@ -74,13 +78,11 @@ public class ExampleListener implements MessageListener {
 
 ## 1. Hibernate ORM Basics
 
-### 1.0 What is Hibernate ORM? (http://hibernate.org/orm/what-is-an-orm/)
+### 1.0 Hibernate
 
-An object-relational mapping tool for the Java programming language.
+Hibernate is a high-performance object/relational persistence and query service.
 
-Using Hibernate ORM will help your application to achieve Data Persistence.
-
-### 1.1 What is ORM?
+### 1.1 ORM
 
 A way to leverage SQL in other programming languages.
 
@@ -89,6 +91,13 @@ Example:
 | SQL | Hibernate ORM |
 |-----| --------------|
 | CREATE TABLE product | @Entity<br>@Table(name = "product")<br>public class Cart { … } |
+
+### 1.2 What is Hibernate ORM? (http://hibernate.org/orm/what-is-an-orm/)
+
+An object-relational mapping tool for the Java programming language.
+
+Using Hibernate ORM will help your application to achieve Data Persistence.
+
 
 ## 2.Set Up
 
@@ -252,9 +261,11 @@ Add the following codes to your `pom.xml` under the first hierarchy
 
 ## 3. Build a Spring boot applicaton with MySQL database together!
 
-### 3.1 Goals
+### 3.0 Goals
 
 - (GET) Retreive products according to catagory 
+
+- (GET) Retreive products that a merchant has
 
 - (POST) Add new products
 
@@ -262,11 +273,84 @@ Add the following codes to your `pom.xml` under the first hierarchy
 
 - (DELETE) Delete products
 
-- (Relational Database) Retreive all products that a merchant has
+
+### 3.1 Database Design
+
+![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/ERDiagram.png)
 
 ### 3.2 File Structure (Good Software Engineering Practice Suggestion)
 
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/fileStructure.png)
+
+### 3.3 Coding
+
+- Step 0: Create Database in MySQL and configuration ini `application.properties`
+
+Windows: 
+
+```
+cd \SpringBootIntroduction\mysql\bin
+mysql -u root -p
+...
+mysql> CREATE DATABASE inventory;
+```
+
+MacOS:
+
+```
+cd /usr/local/mysql/bin
+./mysql -u root -p
+...
+mysql> CREATE DATABASE inventory;
+```
+
+Insert some data:
+
+```
+insert into Product (productID, category,description,merchantID,name,price) VALUES (110,"book","extrodinary book that deserves your reading",200,"Black Swan Green", 37.9);
+insert into Product (productID, category,description,merchantID,name,price) VALUES (111,"pen","hand made wood pen that is specially for you",200,"Burgendy Pen",26.8);
+insert into Product (productID, category,description,merchantID,name,price) VALUES (112,"mouse","hold this mouse, you will feel you own the whole world",201,"Good Mouse", 67);
+insert into Product (productID, category,description,merchantID,name,price) VALUES (113,"book","heartbreaking. The portrait of Afghan culture broadly painted",202,"The Kite Runner",37);
+insert into Product (productID, category,description,merchantID,name,price) VALUES (114,"book","When a man is found murdered in an abandoned building, unflappable detective Sasagaki is assigned to the case.", 202,"Journey Under the Midnight Sun", 37);
+```
+Application.properties:
+
+```
+
+server:
+  port: 8080
+
+spring:
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      show-sql: true
+      ddl-auto: update
+      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        default_schema: app
+        id.new_generator_mappings: true
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/inventory?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: xxxx
+```
+
+- Step 1: Write Entities
+
+`@Entity`: name an entity
+
+`@Table(name="product")`: name a table in database
+
+`@Id`: primary key
+
+`@Column`: name a column in database
+
+- Step 2: Create Repo
+
 
 ## Reference:
 1. https://www.quora.com/What-is-Spring-Framework-used-for
