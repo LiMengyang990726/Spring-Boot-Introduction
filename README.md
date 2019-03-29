@@ -109,7 +109,11 @@ Using Hibernate ORM will help your application to achieve Data Persistence.
 
 ### 2.1 Create Spring Boot Application (Enable Maven Auto-import)
 
-- **Suggested** Method 1: Use [Intellij IDE](https://www.jetbrains.com/idea/download/#section=mac)
+#### **Suggested** Method 1: Use [IntelliJ IDE](https://www.jetbrains.com/idea/download)
+
+- Instead of downloading the Community Edition from above, it is recommended that students get the IntelliJ IDEA Ultimate for free by signing up using their university email address [here](https://www.jetbrains.com/shop/eform/students).
+
+- If you do not see Spring Initializer in IntelliJ, you can download the Spring Assistant plug-in by going to File > Settings > Plugins > Marketplace > Search for "Spring Assistant". Click "Install", then "Restart". Now when you create a new project under File > New > Project, you should be able to see Spring Assistant (an alternative to Spring Initializer).
 
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Step1.png)
 
@@ -117,7 +121,7 @@ Using Hibernate ORM will help your application to achieve Data Persistence.
 
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Step3.png)
 
-- Method 2: Use Eclipse IDE
+#### Method 2: Use Eclipse IDE
 
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/EStep1.png)
 
@@ -162,7 +166,7 @@ Add the following codes to your `pom.xml` under the first hierarchy
  </dependencies>
  ```
 
-- Method 3: [Download from Spring Boot Website](https://start.spring.io/)
+#### Method 3: [Download from Spring Boot Website](https://start.spring.io/)
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/IStep1.png)
 
 ### 2.2 Set Up MySQL database
