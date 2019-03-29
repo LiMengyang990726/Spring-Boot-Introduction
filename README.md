@@ -336,7 +336,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/inventory?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
-    password: xxxx
+    password: 
 ```
 
 - Step 1: Write Entities
@@ -351,6 +351,21 @@ spring:
 
 - Step 2: Create Repo
 
+`extends JpaRepository<T,D>`: JpaRepository = CrudRepository + PageAndSortingRepository
+
+- Step 3: Write Service
+
+`ProductService`: `ProductServiceImpl`, `ProductServiceCacheImpl`,...
+
+`@Service`: sterotype annotation
+
+`@Autowire`: dependency injection
+
+- Step 4: Write Controller
+
+`@RestController`: = `@Controller` + `@RequestBody`
+
+`@RequestMapping`: annotation
 
 ## Reference:
 1. https://www.quora.com/What-is-Spring-Framework-used-for
