@@ -178,7 +178,7 @@ Add the following codes to your `pom.xml` under the first hierarchy
   
   ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQL1.png)
   
-  - Unzip the `mysql-X.X.X-winxXX.zip` to a directory. E.g. C:\Users\%USERNAME%\Downloads
+  - Unzip the `mysql-X.X.X-winxXX.zip` to a directory. E.g. `C:\Users\%USERNAME%\Downloads`
   
   - Open command prompt. Type in the following:
 
