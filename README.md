@@ -49,7 +49,7 @@ public class ExampleListener {
 
     @JmsListener(destination = "myDestination")
     public void processOrder(String message) {
-    	System.out.println(message);
+        System.out.println(message);
     }
 }
 ```
@@ -109,7 +109,11 @@ Using Hibernate ORM will help your application to achieve Data Persistence.
 
 ### 2.1 Create Spring Boot Application (Enable Maven Auto-import)
 
-- **Suggested** Method 1: Use [Intellij IDE](https://www.jetbrains.com/idea/download/#section=mac)
+#### **Suggested** Method 1: Use [IntelliJ IDE](https://www.jetbrains.com/idea/download)
+
+- Instead of downloading the Community Edition from above, it is recommended that students get the IntelliJ IDEA Ultimate for free by signing up using their university email address [here](https://www.jetbrains.com/shop/eform/students).
+
+- If you do not see Spring Initializer in IntelliJ, you can download the Spring Assistant plug-in by going to File > Settings > Plugins > Marketplace > Search for "Spring Assistant". Click "Install", then "Restart". Now when you create a new project under File > New > Project, you should be able to see Spring Assistant (an alternative to Spring Initializer).
 
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Step1.png)
 
@@ -117,7 +121,7 @@ Using Hibernate ORM will help your application to achieve Data Persistence.
 
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Step3.png)
 
-- Method 2: Use Eclipse IDE
+#### Method 2: Use Eclipse IDE
 
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/EStep1.png)
 
@@ -162,7 +166,7 @@ Add the following codes to your `pom.xml` under the first hierarchy
  </dependencies>
  ```
 
-- Method 3: [Download from Spring Boot Website](https://start.spring.io/)
+#### Method 3: [Download from Spring Boot Website](https://start.spring.io/)
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/IStep1.png)
 
 ### 2.2 Set Up MySQL database
@@ -174,32 +178,32 @@ Add the following codes to your `pom.xml` under the first hierarchy
   
   ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQL1.png)
   
-  - Unzip the `tar.gz` to a directory. E.g. C:\SpringBootIntroduction
+  - Unzip the `mysql-X.X.X-winxXX.zip` to a directory. E.g. C:\Users\%USERNAME%\Downloads
   
-  - Open CMD. Type in the followings:
+  - Open command prompt. Type in the following:
+
   ```
-  //assume in C folder already
-  cd \SpringBootIntroduction\mysql\bin
+  $ cd C:\Users\%USERNAME%\Downloads\mysql-X.X.XX-winxXX\mysql-X.X.XX-winxXX\bin
   
-  // Initialize the database. Create a root user with random password. Show the messages on console
-  mysqld --initialize --console
+  # Initialize the database. Create a root user with random password. Show the messages on console
+  $ mysqld --initialize --console
   ...
   ...A temporary password is generated for root@localhost: xxxxxxxx // take note of this password, if forget, delete and unzipped folder, unzip it, and repeat the above steps
   ```
+  
   - To start the server:
-  ```
-  //assume in C folder already
-  cd \SpringBootIntroduction\mysql\bin
   
-  mysqld --console
   ```
-  - To shut down the server: Ctrl+C
+  $ mysqld --console
+  ```
   
-  - To start a 'Client'
+  - To shut down the server: Ctrl+C (but don't do it now, we need to keep the connection alive to connect to MySQL)
+  
+  - Open another Command Prompt. To start a 'Client':
+  
   ```
-  cd \SpringBootIntroduction\mysql\bin
-  mysql -u root -p
-  Enter password:   // Enter the root's password set during installation.
+  $ mysql -u root -p
+  Enter password: XXXXXXX  // Enter temporary password which was generated just now
   Welcome to the MySQL monitor.  Commands end with ; or \g.
   Your MySQL connection id is 1
   Server version: 8.0.xx
