@@ -113,7 +113,7 @@ Using Hibernate ORM will help your application to achieve Data Persistence.
 
 - Instead of downloading the Community Edition from above, it is recommended that students get the IntelliJ IDEA Ultimate for free by signing up using their university email address [here](https://www.jetbrains.com/shop/eform/students).
 
-- If you do not see Spring Initializer in IntelliJ, you can download the Spring Assistant plug-in by going to File > Settings > Plugins > Marketplace > Search for "Spring Assistant". Click "Install", then "Restart". Now when you create a new project under File > New > Project, you should be able to see Spring Assistant (an alternative to Spring Initializer).
+- If you do not see Spring Initializr in IntelliJ, (you are probably using the Community Edition which doesn't support this and thus) you can download the Spring Assistant plug-in by going to File > Settings > Plugins > Marketplace > Search for "Spring Assistant". Click "Install", then "Restart". Now when you create a new project under File > New > Project, you should be able to see Spring Assistant (an alternative to Spring Initializr).
 
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Step1.png)
 
@@ -178,7 +178,7 @@ Add the following codes to your `pom.xml` under the first hierarchy
   
   ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQL1.png)
   
-  - Unzip the `mysql-X.X.X-winxXX.zip` to a directory. E.g. C:\Users\%USERNAME%\Downloads
+  - Unzip the `mysql-X.X.X-winxXX.zip` to a directory. E.g. `C:\Users\%USERNAME%\Downloads`
   
   - Open command prompt. Type in the following:
 
@@ -212,7 +212,7 @@ Add the following codes to your `pom.xml` under the first hierarchy
   mysql>
   ```
   
-- For MacOS.
+- For MacOS
   - [Download MySQL Community Server](https://dev.mysql.com/downloads/mysql/). Please download the `dmg` file.
   
   ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/MySQLMac.png)
@@ -231,7 +231,7 @@ Add the following codes to your `pom.xml` under the first hierarchy
   
   - To start a 'Client':
   ```
-  cd /usr/local/mysql/bin
+  $ cd /usr/local/mysql/bin
   ./mysql -u root -p
   Enter password:   // Enter the root's password given during installation. You will NOT any * for maximum security
   Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -243,7 +243,7 @@ Add the following codes to your `pom.xml` under the first hierarchy
 
 ### 2.3 Connect MySQL Database to Spring Boot project via Hibernate
 
-- Step 1: Open `File/Project Structure` in Intellij
+- Step 1: Open `File/Project Structure` in IntelliJ
 
 ![](https://github.com/LiMengyang990726/Spring-Boot-Introduction/blob/master/images/Hibernate1.png)
 
